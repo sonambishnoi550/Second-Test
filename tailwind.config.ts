@@ -11,7 +11,9 @@ export default {
     extend: {
       colors: {
         'light-black': "#010101",
-        'blue': "#7E68FF",
+        'sky': "#00B7FF",
+        'pink': "#DF2BFF",
+        'light-gray': "#fafafa",
       },
       fontFamily: {
         poppins: ['Poppins', 'sans- serif'],
