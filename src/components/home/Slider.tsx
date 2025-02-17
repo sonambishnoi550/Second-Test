@@ -31,16 +31,16 @@ const Slider = () => {
     return (
         <>
             <div className="flex justify-center absolute top-0 left-1/2 z-20 -translate-x-1/2 items-center gap-3 py-2">
-                <Link href={"/question-1/dashboard"} className="text-black p-3 border border-black rounded-lg bg-green-600">
+                <Link href={"/question-1/dashboard"} className="text-black p-3 whitespace-nowrap border border-black rounded-lg bg-green-600">
                     Question-1
                 </Link>
-                <Link href={"/question-2/dashboard"} className="text-black p-3 border border-black rounded-lg bg-green-600">
+                <Link href={"/question-2/dashboard"} className="text-black p-3 border whitespace-nowrap border-black rounded-lg bg-green-600">
                     Question-2
                 </Link>
             </div>
             <div className="bg-light-black slider-section min-h-screen mx-auto flex justify-center items-center">
                 <div className="flex flex-col justify-center items-center">
-                    <h2 className="font-medium text-5xl leading-[57.6px] text-white text-center max-w-[830px] mx-auto">
+                    <h2 className="font-medium md:text-5xl text-3xl leading-[120%] text-white text-center md:max-w-[830px] max-w-[320px] mx-auto">
                         Transforming Secure, Modern{" "}
                         <span className=' bg-gradient-to-l to-[#DF2BFF] from-[#00B7FF] bg-clip-text text-transparent'>Development</span> with AdaptsAI
                     </h2>
@@ -51,17 +51,17 @@ const Slider = () => {
                                 <div
                                     className={`flex gap-[65px] items-center container max-w-[1140px] mx-auto`}
                                 >
-                                    <div className="flex flex-col max-w-[461px]">
+                                    <div className="md:flex flex-col max-w-[461px]">
                                         <Image src="/assets/images/png/one.png"
                                             alt="one"
                                             width={297}
                                             height={182}
                                         />
-                                        <h4 className="font-bold leading-[39.01px] text-[32px] text-white max-lg:leading-[30px] max-lg:text-2xl max-sm:leading-[26px] max-sm:text-xl">
+                                        <h4 className="font-bold leading-[120%] text-[32px] text-white  max-lg:text-2xl max-sm:text-xl">
                                             AI Chatbots don’t create enterprse-grade
                                             <span className=' bg-gradient-to-r to-[#DF2BFF] from-[#00B7FF] bg-clip-text text-transparent'> apps</span>
                                         </h4>
-                                        <p className="font-poppins max-sm:text-sm leading-[25px] max-sm:leading-5 text-white mt-4">
+                                        <p className="font-poppins max-sm:text-sm leading-[160%] text-white mt-4">
                                             Bootstrap end to end application package including
                                             architecture, tests, infrastructure and deployment code
                                             leveraging AdaptsAI’s patented engine. Your apps are
@@ -88,10 +88,10 @@ const Slider = () => {
                                             width={297}
                                             height={182}
                                         />
-                                        <h4 className="font-bold leading-[39.01px] text-[32px] text-white max-lg:leading-[30px] max-lg:text-2xl max-sm:leading-[26px] max-sm:text-xl">
+                                        <h4 className="font-bold leading-[120%] text-[32px] text-white  max-lg:text-2xl max-sm:text-xl">
                                             Modernization Doesn’t Have to Mean Failure
                                         </h4>
-                                        <p className="font-poppins max-sm:text-sm leading-[25px] max-sm:leading-5 text-white mt-4">
+                                        <p className="font-poppins max-sm:text-sm leading-[160%] text-white mt-4">
                                             Traditional app modernization often falls short because
                                             teams are forced to navigate poorly documented legacy code
                                             — an outdated maze that slows progress and drives up
@@ -120,12 +120,11 @@ const Slider = () => {
                                             alt="three"
                                             width={297}
                                             height={182}
-                                        />
-                                        
-                                        <h4 className="font-bold leading-[39.01px] text-[32px] text-white max-lg:leading-[30px] max-lg:text-2xl max-sm:leading-[26px] max-sm:text-xl">
+                                        />                                       
+                                        <h4 className="font-bold leading-[120%] text-[32px] text-white max-lg:text-2xl max-sm:text-xl">
                                             Protected from Legal Risks and IP liability
                                         </h4>
-                                        <p className="font-poppins max-sm:text-sm leading-[25px] max-sm:leading-5 text-white mt-4">
+                                        <p className="font-poppins max-sm:text-sm leading-[160%] max-sm:leading-5 text-white mt-4">
                                             AdaptsAI ensures IP protection by generating custom,
                                             original code with no direct replication of copyrighted
                                             material. Our LLM engine delivers unique, optimized
@@ -155,10 +154,10 @@ const Slider = () => {
                                             height={182}
                                         />
 
-                                        <h4 className="font-bold leading-[39.01px] text-[32px] text-white max-lg:leading-[30px] max-lg:text-2xl max-sm:leading-[26px] max-sm:text-xl">
+                                        <h4 className="font-bold leading-[120%] text-[32px] text-white max-lg:text-2xl max-sm:text-xl">
                                             AI generated apps need maintenance too!
                                         </h4>
-                                        <p className="font-poppins max-sm:text-sm leading-[25px] max-sm:leading-5 text-white mt-4">
+                                        <p className="font-poppins max-sm:text-sm leading-[160%] text-white mt-4">
                                             Business applications demand ongoing maintenance to
                                             address new vulnerabilities, ensure reliability, and
                                             deliver updates or bug fixes. <br /> <br />

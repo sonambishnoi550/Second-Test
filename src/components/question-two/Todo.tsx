@@ -57,15 +57,15 @@ const Todo: any = () => {
     return (
         <>
             <div className="flex justify-center items-center gap-3 py-3">
-                <Link href={"/question-1/dashboard"} className="text-black p-3 border border-black rounded-lg bg-green-600">
+                <Link href={"/question-1/dashboard"} className="text-black p-3 border whitespace-nowrap border-black rounded-lg bg-green-600">
                     Question-1
                 </Link>
-                <Link href={"/question-2/dashboard"} className="text-black p-3 border border-black rounded-lg bg-green-600">
+                <Link href={"/question-2/dashboard"} className="text-black p-3 border whitespace-nowrap border-black rounded-lg bg-green-600">
                     Question-2
                 </Link>
             </div>
             <div className="py-5 px-4 font-sans max-w-[1440px] overflow-hidden min-h-screen justify-center items-center flex flex-col mx-auto">
-                <h2 className="text-2xl mb-6 text-black text-center">Form</h2>
+                <h2 className="text-2xl mb-6 text-black text-center">To Do App</h2>
                 {/* Form */}
                 <form
                     className="max-w-md mx-auto flex justify-center items-center flex-col w-full"
@@ -80,7 +80,7 @@ const Todo: any = () => {
                                     First name is required
                                 </p>
                             ) : (
-                                <p className="text-black-light text-black leading-[30px]">
+                                <p className="text-black-light font-bold text-black leading-[30px]">
                                     First name
                                 </p>
                             )}
@@ -115,7 +115,7 @@ const Todo: any = () => {
                                     Email already exists
                                 </p>
                             ) : (
-                                <p className="text-black-light text-black leading-[30px]">
+                                <p className="text-black-light text-black font-bold leading-[30px]">
                                     Email
                                 </p>
                             )}
