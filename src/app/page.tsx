@@ -1,17 +1,17 @@
-import React from 'react'
-// import Test from '@/components/Test';
-// import Form from '@/components/Form'
-// import Slider from '@/components/Slider';
-import Swiper from '@/components/home/Swiper'
-const page = () => {
-  return (
-    <div>
-      {/* <Test />
-      <Form />
-      <Slider/> */}
-      <Swiper/>
-    </div>
-  )
-}
+import Slider from "@/components/home/Slider";
+import Link from "next/link";
 
-export default page
+export default function Home() {
+  return (
+    <>
+      <div className="flex justify-center min-h-screen items-center gap-6 py-10">
+        <Link href={"/question-1/dashboard"} className="text-black p-3 border border-black rounded-lg bg-green-600">
+          Question-1
+        </Link>
+        <Link href={"/question-2/dashboard"} className="text-black p-3 border border-black rounded-lg bg-green-600">
+          Question-2
+        </Link>
+      </div>
+    </>
+  );
+}
