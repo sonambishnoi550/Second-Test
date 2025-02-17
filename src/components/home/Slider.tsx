@@ -52,11 +52,11 @@ const Slider = () => {
                                     className={`flex gap-[65px] items-center container max-w-[1140px] mx-auto`}
                                 >
                                     <div className="flex flex-col max-w-[461px]">
-                                        <h3
-                                            className={`font-roboto font-black text-[256px] leading-[100%] text-white`}
-                                        >
-                                            01
-                                        </h3>
+                                        <Image src="/assets/images/png/one.png"
+                                            alt="one"
+                                            width={297}
+                                            height={182}
+                                        />
                                         <h4 className="font-bold leading-[39.01px] text-[32px] text-white max-lg:leading-[30px] max-lg:text-2xl max-sm:leading-[26px] max-sm:text-xl">
                                             AI Chatbots don’t create enterprse-grade
                                             <span className=' bg-gradient-to-r to-[#DF2BFF] from-[#00B7FF] bg-clip-text text-transparent'> apps</span>
@@ -82,12 +82,12 @@ const Slider = () => {
                                 <div
                                     className={`flex gap-[65px] items-center container max-w-[1140px] mx-auto`}
                                 >
-                                    <div className="flex flex-col max-w-[461px]">
-                                        <h3
-                                            className={`font-roboto font-black text-[256px] leading-[100%] text-white`}
-                                        >
-                                            02
-                                        </h3>
+                                    <div className="flex flex-col max-w-[461px]">                   
+                                        <Image src="/assets/images/png/two.png"
+                                            alt="two"
+                                            width={297}
+                                            height={182}
+                                        />
                                         <h4 className="font-bold leading-[39.01px] text-[32px] text-white max-lg:leading-[30px] max-lg:text-2xl max-sm:leading-[26px] max-sm:text-xl">
                                             Modernization Doesn’t Have to Mean Failure
                                         </h4>
@@ -116,11 +116,12 @@ const Slider = () => {
                                     className={`flex gap-[65px] items-center container max-w-[1140px] mx-auto`}
                                 >
                                     <div className="flex flex-col max-w-[461px]">
-                                        <h3
-                                            className={`font-roboto font-black text-[256px] leading-[100%] text-white`}
-                                        >
-                                            03
-                                        </h3>
+                                        <Image src="/assets/images/png/three.png"
+                                            alt="three"
+                                            width={297}
+                                            height={182}
+                                        />
+                                        
                                         <h4 className="font-bold leading-[39.01px] text-[32px] text-white max-lg:leading-[30px] max-lg:text-2xl max-sm:leading-[26px] max-sm:text-xl">
                                             Protected from Legal Risks and IP liability
                                         </h4>
@@ -148,11 +149,12 @@ const Slider = () => {
                                     className={`flex gap-[65px] items-center container max-w-[1140px] mx-auto`}
                                 >
                                     <div className="flex flex-col max-w-[461px]">
-                                        <h3
-                                            className={`font-roboto font-black text-[256px] leading-[100%] text-white`}
-                                        >
-                                            04
-                                        </h3>
+                                        <Image src="/assets/images/png/four.png"
+                                            alt="three"
+                                            width={297}
+                                            height={182}
+                                        />
+
                                         <h4 className="font-bold leading-[39.01px] text-[32px] text-white max-lg:leading-[30px] max-lg:text-2xl max-sm:leading-[26px] max-sm:text-xl">
                                             AI generated apps need maintenance too!
                                         </h4>
