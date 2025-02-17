@@ -58,10 +58,10 @@ const Todo: any = () => {
     return (
         <>
             <div className="flex justify-center items-center gap-3 py-3">
-                <Link href={"/question-1/dashboard"} className="text-black">
+                <Link href={"/question-1/dashboard"} className="text-black p-3 border border-black rounded-lg bg-green-600">
                     Question-1
                 </Link>
-                <Link href={"/question-2/dashboard"} className="text-black">
+                <Link href={"/question-2/dashboard"} className="text-black p-3 border border-black rounded-lg bg-green-600">
                     Question-2
                 </Link>
             </div>
