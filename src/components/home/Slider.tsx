@@ -134,7 +134,7 @@ const Slider = () => {
                                         </p>
                                     </div>
                                     <Image
-                                        src="/assets/images/png/slider-two-image.png"
+                                        src="/assets/images/png/slider-three-image.png"
                                         alt="slider"
                                         width={614}
                                         height={417}
@@ -167,7 +167,7 @@ const Slider = () => {
                                         </p>
                                     </div>
                                     <Image
-                                        src="/assets/images/png/slider-two-image.png"
+                                        src="/assets/images/png/slider-four-image.png"
                                         alt="slider"
                                         width={614}
                                         height={417}
