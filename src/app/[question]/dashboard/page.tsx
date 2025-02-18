@@ -5,14 +5,14 @@ import { useParams } from "next/navigation";
 import React from "react";
 
 const page = () => {
-  const params = useParams();
-  const { question } = params;
-  return (
-    <>
-      {question === "question-1" && <Slider />}
-      {question === "question-2" && <Todo />}
-    </>
-  );
+    const params = useParams();
+    const { question } = params;
+    return (
+        <>
+            {question === "question-1" && <Slider />}
+            {question === "question-2" && <Todo />}
+        </>
+    );
 };
 
 export default page;
