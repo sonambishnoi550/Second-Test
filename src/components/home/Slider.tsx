@@ -13,7 +13,7 @@ const Slider = () => {
                 trigger: ".slider-section",
                 start: "top top",
                 end: "200%",
-                scrub: 1,
+                scrub: 1.2,
                 pin: true,
             },
         });
@@ -25,7 +25,7 @@ const Slider = () => {
             {
                 x: "-75%",
             },
-            "+=0.5"
+            "+=0.2"
         );
     }, []);
     return (

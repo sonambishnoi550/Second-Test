@@ -98,28 +98,27 @@ const Todo: any = () => {
                     </div>
                     {/* Email */}
                     <div className="mb-4 w-full">
-                        <label htmlFor="email" className="block  mb-2">
-                            {error && formValues.email.length === 0 ? (
+                        <label htmlFor="email" className="block mb-2">
+                            {/* Show 'Email' label first */}
+                            {!formValues.email.length && !error ? (
+                                <p className="font-bold leading-[30px]">Email</p>
+                            ) : formValues.email.length === 0 ? (
                                 <p className="text-red-600 font-bold leading-[30px]">
                                     Email is required
                                 </p>
-                            ) : error &&
-                                !EmailRegex.test(formValues.email) &&
-                                formValues.email.length > 0 ? (
+                            ) : !EmailRegex.test(formValues.email) ? (
                                 <p className="text-red-600 font-bold leading-[30px]">
                                     Email is not valid
                                 </p>
-                            ) : error &&
-                                formData.every((item) => item.email !== formValues.email) ? (
+                            ) : formData.some((item) => item.email === formValues.email) ? (
                                 <p className="text-red-600 font-bold leading-[30px]">
                                     Email already exists
                                 </p>
                             ) : (
-                                <p className="text-black-light text-black font-bold leading-[30px]">
-                                    Email
-                                </p>
+                                <p className="font-bold leading-[30px]">Email</p>
                             )}
                         </label>
+
                         <input
                             type="email"
                             id="email"
