@@ -239,14 +239,14 @@ const Todo: any = () => {
                     {/* Sumbit Button */}
                     <button
                         type="submit"
-                        className="px-4 py-2 bg-blue-500 mx-auto bg-black hover:scale-105 transition duration-300 text-white rounded"
+                        className="px-4 py-2 bg-blue-500 mx-auto hover:scale-105 transition duration-300 text-white rounded"
                     >
                         Submit
                     </button>
                 </form>
                 {/* Output  */}
                 {formData.length === 0 ? (
-                    <p className="text-white mt-8 text-center">No data found</p>
+                    <p className=" mt-8 text-center">No data found</p>
                 ) : (
                     <div className="mt-8">
                         <h3 className="text-xl mb-4 w-full">Submitted Data</h3>
@@ -255,19 +255,19 @@ const Todo: any = () => {
                                 <table className="w-full border-collapse">
                                     <thead>
                                         <tr>
-                                            <th className="border border-gray-300 px-4 text-white py-2 text-left">
+                                            <th className="border border-gray-300 px-4  py-2 text-left">
                                                 First Name
                                             </th>
-                                            <th className="border border-gray-300 px-4 text-white py-2 text-left">
+                                            <th className="border border-gray-300 px-4  py-2 text-left">
                                                 Email
                                             </th>
-                                            <th className="border border-gray-300 px-4 text-white py-2 text-left">
+                                            <th className="border border-gray-300 px-4 py-2 text-left">
                                                 Phone
                                             </th>
-                                            <th className="border border-gray-300 px-4 text-white py-2 text-left">
+                                            <th className="border border-gray-300 px-4  py-2 text-left">
                                                 Password
                                             </th>
-                                            <th className="border border-gray-300 px-4 text-white py-2 text-left">
+                                            <th className="border border-gray-300 px-4  py-2 text-left">
                                                 Actions
                                             </th>
                                         </tr>
@@ -275,16 +275,16 @@ const Todo: any = () => {
                                     <tbody>
                                         {formData.map((data, index) => (
                                             <tr key={index}>
-                                                <td className="border border-gray-300 whitespace-nowrap px-4 text-white py-2">
+                                                <td className="border border-gray-300 whitespace-nowrap px-4  py-2">
                                                     {data.firstName}
                                                 </td>
-                                                <td className="border border-gray-300 px-4 text-white py-2">
+                                                <td className="border border-gray-300 px-4  py-2">
                                                     {data.email}
                                                 </td>
-                                                <td className="border border-gray-300 px-4 text-white py-2">
+                                                <td className="border border-gray-300 px-4  py-2">
                                                     {data.phone}
                                                 </td>
-                                                <td className="border border-gray-300 px-4 text-white py-2">
+                                                <td className="border border-gray-300 px-4  py-2">
                                                     {data.password}
                                                 </td>
                                                 <td>
