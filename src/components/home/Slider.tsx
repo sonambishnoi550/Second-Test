@@ -1,125 +1,138 @@
 "use client";
-import Image from "next/image";
-import React, { useEffect } from "react";
-import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { PROGRESS_ICONS, SLIDER_DATA } from "@/utils/helper";
+import gsap from "gsap";
 import Link from "next/link";
+import Image from "next/image";
+import React, { useEffect, useState } from "react";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
 
-const Slider = () => {
+const RoadmapSlider: React.FC = () => {
+    const [activeIcon, setActiveIcon] = useState(0);
+
     useEffect(() => {
+        let mm = gsap.matchMedia();
         const tl = gsap.timeline({
             scrollTrigger: {
-                trigger: ".slider-section",
-                start: "top top",
-                end: "200%",
-                scrub: 1.2,
+                trigger: "#hero",
+                start: "30% top",
+                end: "400% center",
                 pin: true,
+                scrub: 2,
+                onUpdate: (self) => {
+                    const progress = self.progress;
+                    const newIndex = Math.round(progress * (PROGRESS_ICONS.length - 1));
+                    setActiveIcon(newIndex);
+                },
             },
         });
-        tl.fromTo(
-            ".slider-item",
-            {
-                x: "0%",
-            },
-            {
-                x: "-75%",
-            },
-            "+=0.2"
-        );
+
+        mm.add("(min-width:1200px) and (max-width:1596.99px)", () => {
+            tl.fromTo(".my-slider", { x: 100 }, { xPercent: -260, duration: 10 }, "0");
+            tl.fromTo(".custom-line", { left: 0, width: 180 }, { width: "100%", duration: 11 }, "0");
+        });
+
+        mm.add("(min-width:1000px) and (max-width:1200.99px)", () => {
+            tl.fromTo(".my-slider", { x: 0 }, { xPercent: -330, duration: 10 }, "0");
+            tl.fromTo(".custom-line", { left: 0, width: 30 }, { width: "100%", duration: 11 }, "0");
+        });
+
+        mm.add("(min-width:650px) and (max-width:999.99px)", () => {
+            tl.fromTo(".my-slider", { x: 0 }, { xPercent: -320, duration: 10 }, "0");
+            tl.fromTo(".custom-line", { left: 0, width: 50 }, { width: "100%", duration: 11 }, "0");
+        });
+
+        mm.add("(min-width:300px) and (max-width:649.99px)", () => {
+            tl.fromTo(".my-slider", { x: 0 }, { xPercent: -340, duration: 10 }, "0");
+            tl.fromTo(".custom-line", { left: 0, width: 50 }, { width: "100%", duration: 11 }, "0");
+        });
     }, []);
+
     return (
         <>
-            <div className="flex justify-center absolute top-0 left-1/2 z-20 -translate-x-1/2 items-center gap-3 py-2">
-                <Link href={"/question-1/dashboard"} className="p-3 whitespace-nowrap border border-black rounded-lg bg-green-600">
-                    Question-1
+            <div className="flex justify-center items-center gap-3 py-4">
+                <Link href="/test/question-1/dashboard">
+                    <span className="bg-green-600 p-3 rounded-lg border border-black">
+                        Question-1
+                    </span>
                 </Link>
-                <Link href={"/question-2/dashboard"} className="p-3 border whitespace-nowrap border-black rounded-lg bg-green-600">
-                    Question-2
+                <Link href="/test/question-2/dashboard">
+                    <span className="bg-green-600 p-3 rounded-lg border border-black">
+                        Question-2
+                    </span>
                 </Link>
             </div>
-            <div className="bg-light-black slider-section min-h-screen mx-auto flex justify-center items-center">
-                <div className="flex flex-col justify-center items-center">
-                    <h2 className="font-medium md:text-5xl text-3xl leading-[120%] text-white text-center md:max-w-[830px] max-w-[320px] mx-auto">
+
+            <div id="hero" className="bg-black pt-[156px] max-lg:pt-32 max-sm:pt-28 pb-28 overflow-hidden min-h-screen">
+                <div className="max-w-[1172px] mx-auto px-4">
+                    <h2 className="max-w-[830px] mx-auto font-medium text-5xl max-md:text-4xl max-sm:text-3xl leading-[57.6px] text-white text-center">
                         Transforming Secure, Modern{" "}
-                        <span className=' bg-gradient-to-l to-pink from-sky bg-clip-text text-transparent'>Development</span> with AdaptsAI
+                        <span className="bg-gradient-to-r from-pink to-sky bg-clip-text text-transparent">
+                            Development
+                        </span>{" "}
+                        with AdaptsAI
                     </h2>
-                    <div className="overflow-hidden pt-[60px] max-w-[1440px]">
-                        <div className="flex w-max slider-item left-0 ">
-                            {/* gsap content one */}
-                            <div className="min-w-[1440px]">
-                                <div className={`md:flex gap-[65px] items-center container max-w-[1140px] mx-auto`} >
-                                    <div className="md:flex flex-col max-w-[461px]">
-                                        <Image src="/assets/images/png/one.png" alt="one" width={297} height={182} />
-                                        <h4 className="font-bold leading-[120%] text-[32px] text-white max-lg:text-2xl max-sm:text-xl">
-                                            AI Chatbots don’t create enterprse-grade
-                                            <span className=' bg-gradient-to-r to-pink from-sky bg-clip-text text-transparent'> apps</span>
-                                        </h4>
-                                        <p className="font-poppins max-sm:text-sm leading-[160%] text-light-gray mt-4">
-                                            Bootstrap end to end application package including architecture, tests, infrastructure and deployment code
-                                            leveraging AdaptsAI’s patented engine. Your apps are secure by design and by default.</p>
-                                    </div>
-                                    <Image src="/assets/images/png/slider-one-image.png" alt="slider" width={614} height={417}
-                                        className="shadow-[0px_4px_58.7px_0px_#00DDFF26] rounded-xl h-[417px] max-lg:max-w-[614px] max-lg:max-h-[417px]" />
+
+                    <div className="flex items-center justify-between pt-[60px]">
+                        {PROGRESS_ICONS.map((obj, i) => (
+                            <div key={i} className="relative flex flex-col items-center cursor-pointer">
+                                <div
+                                    className={`flex items-center justify-center px-4 py-[18px] rounded-lg border-2 transition-all ${activeIcon === i ? "border-light-blue bg-gradient-to-r from-sky to-pink" : "border-gray-600"
+                                        }`}
+                                >
+                                    <img
+                                        src={obj.img}
+                                        alt={obj.alt}
+                                        className={`w-8 h-8 transition-all ${activeIcon === i ? "filter brightness-0 invert" : ""}`}
+                                    />
                                 </div>
                             </div>
-                            {/* gsap content two */}
-                            <div className="min-w-[1440px]">
-                                <div className={`flex gap-[65px] items-center container max-w-[1140px] mx-auto`} >
-                                    <div className="flex flex-col max-w-[461px]">
-                                        <Image src="/assets/images/png/two.png" alt="two" width={297} height={182} />
-                                        <h4 className="font-bold leading-[120%] text-[32px] text-white max-lg:text-2xl max-sm:text-xl">
-                                            Modernization Doesn’t Have to Mean Failure </h4>
-                                        <p className="font-poppins max-sm:text-sm leading-[160%] text-light-gray mt-4">
-                                            Traditional app modernization often falls short because teams are forced to navigate poorly documented legacy code
-                                            — an outdated maze that slows progress and drives up costs. It’s time to change the narrative. <br /> <br />{" "}
-                                            The execution can neither compromise on business and technical requirements nor lose sight of modern
-                                            architecture and security. </p>
-                                    </div>
-                                    <Image src="/assets/images/png/slider-two-image.png" alt="slider" width={614} height={417}
-                                        className="shadow-[0px_4px_58.7px_0px_#00DDFF26] rounded-xl h-[417px] max-lg:max-w-[614px] max-lg:max-h-[417px]" />
-                                </div>
-                            </div>
-                            {/* gsap content three*/}
-                            <div className="min-w-[1440px]">
-                                <div className={`flex gap-[65px] items-center container max-w-[1140px] mx-auto`} >
-                                    <div className="flex flex-col max-w-[461px]">
-                                        <Image src="/assets/images/png/three.png" alt="three" width={297} height={182} />
-                                        <h4 className="font-bold leading-[120%] text-[32px] text-white max-lg:text-2xl max-sm:text-xl">
-                                            Protected from Legal Risks and IP liability </h4>
-                                        <p className="font-poppins max-sm:text-sm leading-[160%] max-sm:leading-5 text-light-gray mt-4">
-                                            AdaptsAI ensures IP protection by generating custom, original code with no direct replication of copyrighted
-                                            material. Our LLM engine delivers unique, optimized solutions while maintaining high quality. Users can trust
-                                            their codebases are free from IP risks, enabling secure, responsible AI innovation. </p>
-                                    </div>
-                                    <Image src="/assets/images/png/slider-three-image.png" alt="slider" width={614} height={417}
-                                        className="shadow-[0px_4px_58.7px_0px_#00DDFF26] rounded-xl h-[417px] max-lg:max-w-[614px] max-lg:max-h-[417px]" />
-                                </div>
-                            </div>
-                            {/* gsap content four */}
-                            <div className="min-w-[1440px]">
-                                <div className={`flex gap-[65px] items-center container max-w-[1140px] mx-auto`} >
-                                    <div className="flex flex-col max-w-[461px]">
-                                        <Image src="/assets/images/png/four.png" alt="three" width={297} height={182} />
-                                        <h4 className="font-bold leading-[120%] text-[32px] text-white max-lg:text-2xl max-sm:text-xl">
-                                            AI generated apps need maintenance too! </h4>
-                                        <p className="font-poppins max-sm:text-sm leading-[160%] text-light-gray mt-4"> Business applications demand ongoing maintenance to
-                                            address new vulnerabilities, ensure reliability, and deliver updates or bug fixes. <br /> <br />
-                                            With AdaptsAI's advanced context awareness, maintenance becomes effortless—minimizing code ramp-up time,
-                                            streamlining troubleshooting, and simplifying enhancements for maximum efficiency.
-                                        </p>
-                                    </div>
-                                    <Image src="/assets/images/png/slider-four-image.png" alt="slider" width={614} height={417}
-                                        className="shadow-[0px_4px_58.7px_0px_#00DDFF26] rounded-xl h-[417px] max-lg:max-w-[614px] max-lg:max-h-[417px]" />
-                                </div>
-                            </div>
-                        </div>
+                        ))}
                     </div>
-                    {/* Slider End */}
+                </div>
+
+                <div className="h-[1px] bg-light-gray line mt-3 max-w-[1440px] mx-auto">
+                    <div className="custom-line h-[1px] bg-gradient-to-r from-pink to-sky mt-3 max-w-[1440px]"></div>
+                </div>
+
+                <div className="px-4 mx-auto w-full flex sm:gap-28 max-sm:gap-10 pt-[60px] max-md:pt-10 my-slider">
+                    {SLIDER_DATA.map((obj, i) => (
+                        <div
+                            key={i}
+                            className="flex max-sm:flex-wrap items-center w-full sm:gap-10 mx-auto justify-between lg:min-w-[1172px] max-lg:min-w-[1000px] max-md:min-w-[700px] max-sm:min-w-[375px] px-4"
+                        >
+                            <div className="sm:max-w-[461px] mx-auto">
+                                <Image
+                                    src={obj.img}
+                                    alt={obj.textAlt}
+                                    width={297}
+                                    height={187}
+                                    className="pointer-events-none max-lg:h-[150px] max-lg:w-[200px] max-md:h-[70px] max-md:w-[100px] max-sm:h-[50px] max-sm:w-[50px]"
+                                />
+                                <h2 className="font-bold text-[32px] max-lg:text-2xl max-sm:text-xl max-sm:leading-6 leading-[39px] text-white">
+                                    {obj.title}{" "}
+                                    <span className="bg-gradient-to-r from-lightSky to-lightPurple bg-clip-text text-transparent">
+                                        {obj.highlight}
+                                    </span>
+                                </h2>
+                                <p className="font-poppins text-base max-md:text-sm max-sm:text-xs leading-[25px] text-white/90 pt-4">
+                                    {obj.description} <br />
+                                    <br />
+                                </p>
+                            </div>
+                            <Image
+                                src={obj.slideImg}
+                                width={614}
+                                height={427}
+                                alt={obj.imageAlt}
+                                className="max-lg:h-[350px] max-lg:w-[500px] max-md:h-[200px] max-md:w-[350px] max-sm:mt-1"
+                            />
+                        </div>
+                    ))}
                 </div>
             </div>
         </>
     );
 };
 
-export default Slider;
+export default RoadmapSlider;

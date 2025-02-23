@@ -9,11 +9,22 @@ export default {
   ],
   theme: {
     extend: {
+      container: {
+        center: true,
+        padding: "20px",
+        screens: {
+          sm: "640px",
+          md: "768px",
+          lg: "1024px",
+          xl: "1140px",
+        },
+      },
       colors: {
         'light-black': "#010101",
         'sky': "#00B7FF",
         'pink': "#DF2BFF",
         'light-gray': "#fafafa",
+        'light-blue':"#182646"
       },
       fontFamily: {
         poppins: ['Poppins', 'sans- serif'],
