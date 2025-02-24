@@ -77,13 +77,13 @@ const RoadmapSlider: React.FC = () => {
                         {PROGRESS_ICONS.map((obj, i) => (
                             <div key={i} className="relative flex flex-col items-center cursor-pointer">
                                 <div
-                                    className={`flex items-center justify-center px-4 py-[18px] rounded-lg border-2 transition-all ${activeIcon === i ? "border-light-blue bg-gradient-to-r from-sky to-pink" : "border-gray-600"
+                                    className={`flex items-center justify-center rounded-lg border-2 transition-all ${activeIcon === i ? "border-light-blue bg-gradient-to-r from-sky to-pink" : "border-gray-600"
                                         }`}
                                 >
                                     <img
                                         src={obj.img}
                                         alt={obj.alt}
-                                        className={`w-8 h-8 transition-all ${activeIcon === i ? "filter brightness-0 invert" : ""}`}
+                                        className={` transition-all ${activeIcon === i ? "filter brightness-0 invert" : ""}`}
                                     />
                                 </div>
                             </div>
